@@ -1,0 +1,6 @@
+{
+  "name": "Takita - Jasa Website Demo Tugas Akhir & Skripsi",
+  "description": "Takita (Tugas Akhir Kita) — Layanan pembuatan website dan online demo untuk project Tugas Akhir (TA) dan skripsi mahasiswa yang siap buat sidang.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
