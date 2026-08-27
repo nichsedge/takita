@@ -10,14 +10,14 @@ export const InteractiveEstimator: React.FC = () => {
   const categories = [
     "Sistem Rekomendasi / SPK",
     "Dashboard Analisis Data / Prediksi",
-    "Sistem Informasi / Web Layanan",
-    "Topik Lainnya"
+    "Website Layanan / Profil & Portofolio",
+    "Sistem Informasi & Topik Lainnya"
   ];
 
   const materialStates = [
     "Baru ada naskah / Bab 3 skripsi",
-    "Ada desain Figma / screenshot",
-    "Ada source code tapi error / belum selesai"
+    "Ada desain / flowchart / gambaran alur",
+    "Ada bahan/file tapi belum jalan atau belum online"
   ];
 
   const deadlines = [

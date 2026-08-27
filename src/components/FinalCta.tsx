@@ -18,8 +18,8 @@ export const FinalCta: React.FC = () => {
 
         {/* Strong Closing Headline */}
         <h2 className="text-xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-3.5 sm:mb-4">
-          Jangan sidang dengan localhost, <br className="hidden sm:inline" />
-          kalau project kamu bisa dibuat <span className="text-emerald-400">lebih proper</span>.
+          Jangan biarkan demo TA kamu cuma nyangkut di laptop, <br className="hidden sm:inline" />
+          saat bisa dibuat <span className="text-emerald-400">online & siap dipresentasikan</span>.
         </h2>
 
         {/* Supporting message */}

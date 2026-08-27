@@ -110,35 +110,35 @@ export const Hero: React.FC = () => {
           <div className="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 sm:p-6">
             <div className="text-center mb-4 sm:mb-5">
               <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-500">
-                Solusi Masalah Klasik Sidang Tugas Akhir
+                Solusi Masalah Nyata Saat Presentasi Tugas Akhir
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
-              {/* Pain Point: Localhost Problem */}
+              {/* Pain Point: Hanya di laptop sendiri / Belum Online */}
               <div className="bg-rose-50/70 border border-rose-200 rounded-xl p-3.5 sm:p-5 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2.5 text-rose-800 font-bold text-xs sm:text-sm">
                     <ServerCrash className="w-4 h-4 text-rose-600 shrink-0" />
-                    <span>Kondisi Bikin Cemas (Localhost)</span>
+                    <span>Sebelum Dibantu (Bikin Was-Was)</span>
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-stone-700">
                     <li className="flex items-start gap-2">
                       <span className="text-rose-500 font-bold">✕</span>
-                      <span>Dosen minta buka link di HP beliau tapi nggak bisa</span>
+                      <span>Hanya bisa dibuka di laptop sendiri, belum punya link online</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-rose-500 font-bold">✕</span>
-                      <span>Database lokal error / lupa XAMPP saat giliran maju</span>
+                      <span>Dosen minta link buat dicoba di HP beliau, tapi nggak bisa kirim</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-rose-500 font-bold">✕</span>
-                      <span>Tampilan UI berantakan dan alur demo macet</span>
+                      <span>Tampilan berantakan, bingung alur klik saat presentasi</span>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-3 pt-2.5 border-t border-rose-200/60 text-[11px] sm:text-xs text-rose-700 font-medium">
-                  Bikin panik dan nilai presentasi berkurang
+                  Bikin panik dan mengganggu nilai presentasi
                 </div>
               </div>
 
@@ -152,20 +152,20 @@ export const Hero: React.FC = () => {
                   <ul className="space-y-2 text-xs sm:text-sm text-stone-800">
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-emerald-600 font-bold shrink-0 mt-0.5" />
-                      <span>URL online aktif & stabil, bisa dibuka dosen kapan saja</span>
+                      <span>Dapat link website resmi, bebas dibuka dosen kapan saja</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-emerald-600 font-bold shrink-0 mt-0.5" />
-                      <span>Alur form & perhitungan sesuai bab metode skripsi</span>
+                      <span>Alur form & perhitungan sinkron dengan naskah skripsi</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-emerald-600 font-bold shrink-0 mt-0.5" />
-                      <span>Tampilan rapi dan percaya diri saat presentasi</span>
+                      <span>Didampingi panduan alur demo biar percaya diri di depan penguji</span>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-3 pt-2.5 border-t border-emerald-200/60 text-[11px] sm:text-xs text-emerald-800 font-semibold flex items-center justify-between">
-                  <span>Presentasi lancar & tenang</span>
+                  <span>Presentasi tenang & profesional</span>
                   <span className="bg-emerald-200/60 text-emerald-900 px-2 py-0.5 rounded text-[10px] sm:text-[11px]">Siap Sidang</span>
                 </div>
               </div>
