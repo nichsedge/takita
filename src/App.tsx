@@ -19,7 +19,7 @@ export default function App() {
       {/* 1. Top Navigation Bar */}
       <Navbar />
 
-      <main className="flex-1">
+      <main className="flex-1 pb-16 sm:pb-0">
         {/* 2. Hero Section */}
         <Hero />
 

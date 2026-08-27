@@ -24,12 +24,12 @@ export const DemoProjects: React.FC = () => {
         </div>
 
         {/* Project Selector Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
+        <div className="flex sm:flex-wrap items-center sm:justify-center gap-2 mb-6 sm:mb-10 overflow-x-auto pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
           {DEMO_PROJECTS.map((proj) => (
             <button
               key={proj.id}
               onClick={() => setActiveTab(proj.id)}
-              className={`text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl transition-all ${
+              className={`text-xs sm:text-sm font-bold px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl transition-all whitespace-nowrap shrink-0 ${
                 activeTab === proj.id
                   ? 'bg-stone-900 text-white shadow-sm'
                   : 'bg-white text-stone-600 hover:bg-stone-200/80 border border-stone-200'
@@ -50,17 +50,17 @@ export const DemoProjects: React.FC = () => {
               className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden transition-all"
             >
               {/* Project Top Bar */}
-              <div className="p-5 sm:p-7 border-b border-stone-100 bg-gradient-to-r from-stone-50 via-white to-stone-50 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="p-4 sm:p-7 border-b border-stone-100 bg-gradient-to-r from-stone-50 via-white to-stone-50 flex flex-col md:flex-row md:items-center md:justify-between gap-3.5 sm:gap-4">
                 <div>
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
                       {project.badge}
                     </span>
-                    <span className="text-xs font-medium text-stone-500 bg-stone-100 px-2.5 py-0.5 rounded border border-stone-200">
+                    <span className="text-[10px] sm:text-xs font-medium text-stone-500 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-stone-900">
+                  <h3 className="text-lg sm:text-2xl font-black text-stone-900 leading-snug">
                     {project.title}
                   </h3>
                   <p className="text-xs sm:text-sm font-semibold text-emerald-700 mt-0.5">
@@ -68,13 +68,13 @@ export const DemoProjects: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 sm:pt-0 border-t sm:border-t-0 border-stone-200">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 bg-stone-900 hover:bg-stone-800 text-white text-xs sm:text-sm font-semibold px-3.5 py-2.5 rounded-lg transition-colors shadow-xs shrink-0"
+                      className="inline-flex items-center justify-center gap-1.5 bg-stone-900 hover:bg-stone-800 active:bg-black text-white text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl transition-colors shadow-xs shrink-0 active:scale-[0.98]"
                     >
                       <ExternalLink className="w-4 h-4 text-emerald-400" />
                       <span>Buka Live Demo ↗</span>
@@ -85,9 +85,9 @@ export const DemoProjects: React.FC = () => {
                     href={getWhatsAppUrl(CONTACT_CONFIG.messages.projectExample(project.title))}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-lg transition-colors shadow-xs shrink-0"
+                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl transition-colors shadow-xs shrink-0 active:scale-[0.98]"
                   >
-                    <MessageSquare className="w-4 h-4" />
+                    <MessageSquare className="w-4 h-4 fill-white/20" />
                     <span>Tanya Model Serupa</span>
                   </a>
                 </div>
@@ -221,6 +221,80 @@ export const DemoProjects: React.FC = () => {
                                   <span className="bg-emerald-50 text-emerald-800 px-1.5 py-0.5 rounded font-medium">Detail →</span>
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 2. CepatKerja ID Mockup (Portal Karir & Rekrutmen Kerja) */}
+                      {project.mockupType === 'cepatkerja' && (
+                        <div className="space-y-3">
+                          {/* Portal Header */}
+                          <div className="flex items-center justify-between border-b border-stone-200 pb-2.5">
+                            <div className="flex items-center gap-2">
+                              <div className="w-6 h-6 rounded bg-blue-600 text-white font-bold flex items-center justify-center text-[10px]">
+                                CK
+                              </div>
+                              <div>
+                                <span className="font-extrabold text-stone-900 text-sm">CepatKerja ID</span>
+                                <span className="text-[10px] text-stone-500 ml-2">Portal Lowongan & Karir Terpadu</span>
+                              </div>
+                            </div>
+                            <span className="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded">
+                              cepatkerja-id.vercel.app
+                            </span>
+                          </div>
+
+                          {/* Search & Filter Bar Simulation */}
+                          <div className="bg-white p-2.5 rounded-xl border border-stone-200 space-y-2">
+                            <div className="flex items-center justify-between bg-stone-100 px-3 py-1.5 rounded-lg text-[11px] text-stone-600">
+                              <span className="flex items-center gap-1.5">
+                                <span>🔍</span>
+                                <span className="font-medium text-stone-700">Frontend Developer, Data Analyst, UI/UX...</span>
+                              </span>
+                              <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                                Cari Lowongan
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-1.5 overflow-hidden text-[9px]">
+                              <span className="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded-full border border-blue-200">Semua (128)</span>
+                              <span className="bg-stone-100 text-stone-600 px-2 py-0.5 rounded-full">Full-time</span>
+                              <span className="bg-stone-100 text-stone-600 px-2 py-0.5 rounded-full">Remote / Hybrid</span>
+                              <span className="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">Fresh Graduate</span>
+                            </div>
+                          </div>
+
+                          {/* Vacancy Items */}
+                          <div className="space-y-2">
+                            <div className="text-[11px] font-bold text-stone-700 flex justify-between">
+                              <span>Lowongan Rekomendasi Terverifikasi:</span>
+                              <span className="text-blue-700 font-semibold">Real-time Matching</span>
+                            </div>
+
+                            <div className="bg-white p-2.5 rounded-lg border border-stone-200 shadow-xs flex items-center justify-between">
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <span className="font-bold text-stone-900 text-xs">Frontend Web Developer</span>
+                                  <span className="bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-1.5 py-0.2 rounded">96% Match</span>
+                                </div>
+                                <div className="text-[10px] text-stone-500 mt-0.5">PT Digital Nusantara • Jakarta Selatan (Hybrid) • Rp8jt - 12jt/bln</div>
+                              </div>
+                              <span className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shrink-0">
+                                Lamar
+                              </span>
+                            </div>
+
+                            <div className="bg-white p-2.5 rounded-lg border border-stone-200 shadow-xs flex items-center justify-between">
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <span className="font-bold text-stone-900 text-xs">Data Analyst & BI Specialist</span>
+                                  <span className="bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-1.5 py-0.2 rounded">92% Match</span>
+                                </div>
+                                <div className="text-[10px] text-stone-500 mt-0.5">Inovasi Data Solusindo • Bandung (Remote) • Rp7.5jt - 11jt/bln</div>
+                              </div>
+                              <span className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shrink-0">
+                                Lamar
+                              </span>
                             </div>
                           </div>
                         </div>

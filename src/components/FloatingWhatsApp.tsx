@@ -25,13 +25,13 @@ export const FloatingWhatsApp: React.FC = () => {
   return (
     <>
       {/* 1. Mobile Sticky Bottom Bar (High CTR for Smartphone Users) */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-stone-900/95 backdrop-blur-md border-t border-stone-800 p-2.5 px-3 flex items-center justify-between gap-2 shadow-2xl">
-        <div className="flex flex-col">
-          <span className="text-[11px] font-bold text-white leading-tight flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Konsultasi Project TA</span>
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-stone-900/98 backdrop-blur-md border-t border-stone-800 pt-2.5 pb-[max(0.65rem,env(safe-area-inset-bottom))] px-3.5 flex items-center justify-between gap-2.5 shadow-2xl">
+        <div className="flex flex-col min-w-0">
+          <span className="text-xs font-black text-white leading-tight flex items-center gap-1.5 truncate">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+            <span>Konsultasi Demo TA</span>
           </span>
-          <span className="text-[10px] text-stone-400">Gratis • Respons &lt; 15 menit</span>
+          <span className="text-[10px] text-stone-400 truncate">Gratis • Respon cepat &lt; 15 mnt</span>
         </div>
 
         <a
@@ -39,7 +39,7 @@ export const FloatingWhatsApp: React.FC = () => {
           href={getWhatsAppUrl(CONTACT_CONFIG.messages.hero)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 bg-emerald-600 active:bg-emerald-700 text-white font-bold text-xs px-3.5 py-2 rounded-lg shadow-md shrink-0"
+          className="flex items-center gap-1.5 bg-emerald-600 active:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md shrink-0 active:scale-[0.97]"
         >
           <MessageSquare className="w-4 h-4 fill-white/20" />
           <span>Chat WhatsApp</span>

@@ -38,7 +38,7 @@ export interface DemoProject {
   description: string;
   badge: string;
   features: string[];
-  mockupType: "sabasunten" | "nutrijoy" | "dashboard";
+  mockupType: "sabasunten" | "nutrijoy" | "cepatkerja" | "dashboard";
   liveUrl?: string;
   stats: { label: string; value: string }[];
 }
@@ -63,6 +63,27 @@ export const DEMO_PROJECTS: DemoProject[] = [
       { label: "Status Demo", value: "Online / Live" },
       { label: "Aksesibilitas", value: "Responsif Mobile" },
       { label: "Domain Asli", value: "sabasunten.id" }
+    ]
+  },
+  {
+    id: "cepatkerja",
+    title: "CepatKerja ID (Portal Rekrutmen & Penyaluran Karir)",
+    category: "Sistem Informasi / Rekayasa Perangkat Lunak & HR Tech",
+    methodology: "Filter Lowongan Kerja, Skill Matching & Pelacakan Lamaran (ATS)",
+    description: "Platform portal karir dan rekrutmen kerja modern untuk menghubungkan pencari kerja dengan lowongan terverifikasi, dilengkapi filtering spesifik, status tracking, dan profil kandidat.",
+    badge: "Live Demo Asli (Vercel)",
+    liveUrl: "https://cepatkerja-id.vercel.app/",
+    features: [
+      "Pencarian & filtering lowongan (bidang, tipe kerja, gaji, lokasi)",
+      "Sistem pencocokan kualifikasi & skill pelamar kerja",
+      "Pelacakan status proses lamaran terstruktur",
+      "Tampilan modern, rapi, dan responsif siap diuji dosen"
+    ],
+    mockupType: "cepatkerja",
+    stats: [
+      { label: "Status Demo", value: "Online di Vercel" },
+      { label: "Fitur Sistem", value: "Job Portal & ATS" },
+      { label: "Akses Demo", value: "cepatkerja-id.vercel.app" }
     ]
   },
   {
