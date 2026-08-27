@@ -1,5 +1,5 @@
 /**
- * Configurable constants for WebTA landing page.
+ * Configurable constants for Takita landing page.
  * Easy to update WhatsApp contact number, pricing, copy, and sample projects.
  */
 

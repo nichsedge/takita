@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
 
         </div>
 
-        {/* Visual Comparison: Localhost vs Live Demo WebTA */}
+        {/* Visual Comparison: Localhost vs Live Demo Takita */}
         <div className="mt-8 sm:mt-14 max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 sm:p-6">
             <div className="text-center mb-4 sm:mb-5">
@@ -142,7 +142,7 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Solution: WebTA Ready */}
+              {/* Solution: Takita Ready */}
               <div className="bg-emerald-50/80 border border-emerald-200 rounded-xl p-3.5 sm:p-5 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-2.5 text-emerald-900 font-bold text-xs sm:text-sm">
