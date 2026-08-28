@@ -46,48 +46,11 @@ export const Hero: React.FC = () => {
             Kirim materi atau Bab 3 skripsi kamu. Kami bangun website demo yang <span className="font-semibold text-stone-800">online, stabil, dan sinkron naskah</span> untuk dipresentasikan ke dosen.
           </motion.p>
 
-          {/* Live Demo Quick Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 bg-stone-100/90 rounded-xl border border-stone-200/90 mb-5 sm:mb-6 text-xs"
-          >
-            <span className="text-stone-500 font-semibold px-1.5 py-0.5 text-[11px] sm:text-xs">Live Demo Aktif:</span>
-            <a 
-              href="http://sabasunten.id/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white hover:bg-emerald-50 text-stone-800 hover:text-emerald-700 px-2.5 py-1 rounded-lg border border-stone-200 font-medium transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center gap-1 shadow-2xs text-[11px] sm:text-xs"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span>sabasunten.id ↗</span>
-            </a>
-            <a 
-              href="https://cepatkerja-id.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white hover:bg-emerald-50 text-stone-800 hover:text-emerald-700 px-2.5 py-1 rounded-lg border border-stone-200 font-medium transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center gap-1 shadow-2xs text-[11px] sm:text-xs"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span>cepatkerja-id.vercel.app ↗</span>
-            </a>
-            <a 
-              href="https://nutrijoy.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white hover:bg-emerald-50 text-stone-800 hover:text-emerald-700 px-2.5 py-1 rounded-lg border border-stone-200 font-medium transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center gap-1 shadow-2xs text-[11px] sm:text-xs"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span>nutrijoy.vercel.app ↗</span>
-            </a>
-          </motion.div>
-
           {/* Primary Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 mb-4"
           >
             <a

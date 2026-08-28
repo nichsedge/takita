@@ -4,15 +4,15 @@ import { CONTACT_CONFIG, getWhatsAppUrl } from '../config';
 import { MessageSquare, Send, Check } from 'lucide-react';
 
 export const InteractiveEstimator: React.FC = () => {
-  const [category, setCategory] = useState<string>("Sistem Rekomendasi / SPK");
+  const [category, setCategory] = useState<string>("Sistem Informasi / Portal Web");
   const [materialState, setMaterialState] = useState<string>("Baru ada naskah / Bab 3 skripsi");
   const [deadline, setDeadline] = useState<string>("Dalam 4 - 7 hari ke depan");
 
   const categories = [
+    "Sistem Informasi / Portal Web",
     "Sistem Rekomendasi / SPK",
-    "Dashboard Analisis Data / Prediksi",
-    "Website Layanan / Profil & Portofolio",
-    "Sistem Informasi & Topik Lainnya"
+    "Aplikasi Web Interaktif",
+    "Topik TA / Jurusan Lainnya"
   ];
 
   const materialStates = [
@@ -31,7 +31,7 @@ export const InteractiveEstimator: React.FC = () => {
   const waUrl = getWhatsAppUrl(customWaMessage);
 
   return (
-    <section className="py-10 sm:py-16 bg-white border-b border-stone-200" id="hitung-kebutuhan">
+    <section className="py-10 sm:py-16 bg-white border-b border-stone-200" id="format-pesan">
       <div className="max-w-4xl mx-auto px-3.5 sm:px-6">
         
         <motion.div

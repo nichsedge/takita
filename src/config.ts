@@ -18,7 +18,7 @@ export const CONTACT_CONFIG = {
     projectExample: (projectTitle: string) => `Halo kak, saya tertarik mau buat website demo yang mirip dengan model "${projectTitle}" untuk TA saya.`,
     faq: "Halo kak, saya mau tanya-tanya dulu seputar pengerjaan web untuk project skripsi/TA saya.",
     customEstimator: (projectType: string, deadline: string, hasSourceCode: string) => 
-      `Halo kak, saya mau konsultasi project TA:\n- Jenis: ${projectType}\n- Target selesai: ${deadline}\n- Kondisi materi: ${hasSourceCode}\n\nKira-kira estimasi waktu & biayanya berapa ya kak?`
+      `Halo kak, saya mau konsultasi project TA:\n- Kategori: ${projectType}\n- Kondisi materi: ${hasSourceCode}\n- Target selesai: ${deadline}\n\nKira-kira estimasi waktu & biayanya berapa ya kak?`
   }
 };
 
@@ -38,7 +38,6 @@ export interface DemoProject {
   description: string;
   badge: string;
   features: string[];
-  mockupType: "sabasunten" | "nutrijoy" | "cepatkerja" | "dashboard";
   liveUrl?: string;
   stats: { label: string; value: string }[];
 }
@@ -50,7 +49,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     category: "Sistem Informasi / Rekayasa Perangkat Lunak",
     methodology: "Peta Interaktif, Direktori Wisata & Content Management",
     description: "Website portal interaktif untuk eksplorasi potensi pariwisata, budaya lokal, dan informasi desa/daerah dengan navigasi terstruktur dan tampilan modern.",
-    badge: "Live Demo Asli",
+    badge: "Contoh Demo",
     liveUrl: "http://sabasunten.id/",
     features: [
       "Direktori destinasi wisata budaya dengan filter kategori",
@@ -58,11 +57,10 @@ export const DEMO_PROJECTS: DemoProject[] = [
       "Galeri kegiatan & artikel informasi berbasis CMS",
       "Tampilan responsif dan sangat ringan dibuka di HP dosen"
     ],
-    mockupType: "sabasunten",
     stats: [
-      { label: "Status Demo", value: "Online / Live" },
+      { label: "Akses Website", value: "Online / Publik" },
       { label: "Aksesibilitas", value: "Responsif Mobile" },
-      { label: "Domain Asli", value: "sabasunten.id" }
+      { label: "Domain", value: "sabasunten.id" }
     ]
   },
   {
@@ -71,7 +69,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     category: "Sistem Informasi / Rekayasa Perangkat Lunak & HR Tech",
     methodology: "Filter Lowongan Kerja, Skill Matching & Pelacakan Lamaran (ATS)",
     description: "Platform portal karir dan rekrutmen kerja modern untuk menghubungkan pencari kerja dengan lowongan terverifikasi, dilengkapi filtering spesifik, status tracking, dan profil kandidat.",
-    badge: "Live Demo Asli (Vercel)",
+    badge: "Contoh Demo",
     liveUrl: "https://cepatkerja-id.vercel.app/",
     features: [
       "Pencarian & filtering lowongan (bidang, tipe kerja, gaji, lokasi)",
@@ -79,11 +77,10 @@ export const DEMO_PROJECTS: DemoProject[] = [
       "Pelacakan status proses lamaran terstruktur",
       "Tampilan modern, rapi, dan responsif siap diuji dosen"
     ],
-    mockupType: "cepatkerja",
     stats: [
-      { label: "Status Demo", value: "Online di Vercel" },
+      { label: "Deployment", value: "Vercel Cloud" },
       { label: "Fitur Sistem", value: "Job Portal & ATS" },
-      { label: "Akses Demo", value: "cepatkerja-id.vercel.app" }
+      { label: "Domain", value: "cepatkerja-id.vercel.app" }
     ]
   },
   {
@@ -92,7 +89,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     category: "Teknik Informatika / Ilmu Komputer & Kesehatan",
     methodology: "Algoritma Kalkulasi Kebutuhan Kalori & Gizi Harian (TDEE/BMR)",
     description: "Aplikasi web interaktif untuk menghitung kebutuhan kalori harian, rekomendasi menu gizi seimbang, dan pemantauan pola makan sehat.",
-    badge: "Live Demo Asli (Vercel)",
+    badge: "Contoh Demo",
     liveUrl: "https://nutrijoy.vercel.app/",
     features: [
       "Kalkulator kebutuhan kalori & rasio makronutrisi harian",
@@ -100,31 +97,30 @@ export const DEMO_PROJECTS: DemoProject[] = [
       "Visualisasi pelacakan gizi (Protein, Karbohidrat, Lemak)",
       "Bisa langsung dicoba live di browser oleh dosen penguji"
     ],
-    mockupType: "nutrijoy",
     stats: [
-      { label: "Status Demo", value: "Online di Vercel" },
+      { label: "Deployment", value: "Vercel Cloud" },
       { label: "Kalkulasi", value: "Otomatis & Real-time" },
       { label: "Platform", value: "Web App" }
     ]
   },
   {
-    id: "dashboard-prediksi",
-    title: "Dashboard Analitik & Prediksi Tren Data",
-    category: "Sains Data / Sistem Informasi",
-    methodology: "Metode: Regresi Linear / Time Series Forecasting",
-    description: "Dashboard analitik interaktif untuk memvisualisasikan data historis transaksi dan menampilkan proyeksi tren periode mendatang yang mudah dipahami dosen.",
-    badge: "Contoh Demo Data Science",
+    id: "kirimayat",
+    title: "KirimAyat (Pesan Personal & Kartu Ayat Al-Qur'an)",
+    category: "Teknik Informatika / Sistem Informasi & Media Digital",
+    methodology: "Dynamic Card Generation, API Al-Qur'an & Shareable Link",
+    description: "Aplikasi web interaktif untuk memilih ayat Al-Qur'an bermakna, merangkai kartu ucapan dengan pesan personal untuk kerabat, dan membagikannya secara instan via tautan unik.",
+    badge: "Contoh Demo",
+    liveUrl: "https://sendtheayat.pages.dev/",
     features: [
-      "Grafik visual perbandingan data aktual vs nilai prediksi",
-      "Fitur simulasi upload dataset penelitian (CSV/Excel)",
-      "Ringkasan metrik evaluasi akurasi (MAPE / RMSE)",
-      "Export hasil pengujian & grafik ke format PDF"
+      "Koleksi ayat Al-Qur'an tematik (penenang hati, motivasi & syukur)",
+      "Generator kartu pesan personal dengan pilihan tema kartu elegan",
+      "Pembuatan shareable link unik untuk dikirimkan ke penerima",
+      "Performa ultra cepat, ringan, dan responsif diakses di smartphone"
     ],
-    mockupType: "dashboard",
     stats: [
-      { label: "Nilai MAPE", value: "6.4% (Akurat)" },
-      { label: "Visualisasi", value: "Grafik & Tabel" },
-      { label: "Format Uji", value: "Dataset CSV" }
+      { label: "Deployment", value: "Cloudflare Pages" },
+      { label: "Fitur Sistem", value: "Card Generator" },
+      { label: "Domain", value: "sendtheayat.pages.dev" }
     ]
   }
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { PRICING_INCLUSIONS, CONTACT_CONFIG, getWhatsAppUrl } from '../config';
-import { MessageSquare, Check, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import { MessageSquare, Check, ShieldCheck, Sparkles, ArrowDown } from 'lucide-react';
 
 export const Pricing: React.FC = () => {
   return (
@@ -63,15 +63,27 @@ export const Pricing: React.FC = () => {
           </div>
 
           {/* Primary Action Button */}
-          <div>
+          <div className="space-y-2.5">
             <a
               id="pricing-cta-btn"
-              href="#kalkulator"
-              className="w-full min-h-[44px] inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 active:bg-stone-950 text-white font-bold text-xs sm:text-sm py-2.5 px-5 rounded-xl transition-all duration-200 shadow-xs hover:-translate-y-0.5 active:translate-y-0"
+              href={getWhatsAppUrl(CONTACT_CONFIG.messages.pricing)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full min-h-[46px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-xl transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
             >
-              <span>Cek Estimasi di Kalkulator Bawah</span>
-              <ArrowRight className="w-4 h-4" />
+              <MessageSquare className="w-4 h-4 fill-white/20" />
+              <span>Kirim Materi & Tanya Estimasi Biaya</span>
             </a>
+
+            <div className="text-center">
+              <a
+                href="#format-pesan"
+                className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-stone-500 hover:text-stone-800 transition-colors font-medium"
+              >
+                <span>Atau gunakan format template pesan WhatsApp di bawah</span>
+                <ArrowDown className="w-3 h-3" />
+              </a>
+            </div>
           </div>
 
         </motion.div>
