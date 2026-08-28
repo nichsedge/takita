@@ -133,58 +133,59 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: "01",
     title: "Chat WhatsApp",
-    desc: "Ceritakan topik skripsi/TA kamu atau sampaikan kebutuhan demo website yang ingin dibuat."
+    desc: "Sampaikan topik TA atau kendala demo website yang kamu hadapi."
   },
   {
     step: "02",
-    title: "Kirim Materi Project",
-    desc: "Kirim bahan yang kamu miliki: bab 3/4 skripsi, flowchart, desain Figma, screenshot, atau source code yang ada."
+    title: "Kirim Draft Bab 3 / Materi",
+    desc: "Kirim naskah bab 3, flowchart, rumus, Figma, atau kodingan lama."
   },
   {
     step: "03",
-    title: "Cek & Estimasi Transparan",
-    desc: "Kami tinjau kebutuhan teknisnya lalu berikan estimasi waktu pengerjaan dan biaya yang jelas di awal."
+    title: "Estimasi & Kesepakatan",
+    desc: "Kami pelajari gratis lalu berikan estimasi waktu dan biaya yang pasti."
   },
   {
     step: "04",
-    title: "Pengerjaan & Live Demo",
-    desc: "Website dibuat, dihubungkan dengan alur data skripsimu, lalu di-online-kan agar bisa diakses lewat link publik."
+    title: "Pengerjaan & Deploy Online",
+    desc: "Website dibuat, disinkronkan dengan skripsi, dan di-online-kan."
   },
   {
     step: "05",
     title: "Review & Siap Sidang",
-    desc: "Kamu coba langsung fiturnya. Kami bantu pastikan alur demonya lancar sampai kamu percaya diri di depan dosen."
+    desc: "Cek demo bersama + panduan alur presentasi di depan penguji."
   }
 ];
 
 export const PRICING_INCLUSIONS = [
-  "Tampilan website responsif (rapi di laptop, tablet, & HP)",
-  "Integrasi alur demo sesuai metode penelitian / alur skripsi",
-  "Hosting online aktif (langsung bisa diakses dosen penguji via URL)",
-  "Bantuan setup & panduan singkat cara mengoperasikan saat demo",
-  "Revisi penyesuaian dasar sebelum jadwal sidang",
-  "Source code lengkap diserahkan ke kamu"
+  "Website responsif (rapi di laptop & HP dosen)",
+  "Alur form & kalkulasi sesuai Bab 3 & 4 skripsi",
+  "Hosting online aktif dengan link publik",
+  "Panduan cara klik & penjelasan alur demo",
+  "Revisi penyesuaian sebelum jadwal sidang",
+  "Source code lengkap diserahkan"
 ];
 
 export const FAQ_ITEMS = [
   {
-    question: "Saya sama sekali nggak bisa coding, apakah tetap bisa dibantu?",
-    answer: "Sangat bisa. Kamu cukup jelaskan alur sistem atau kirimkan dokumen rancangan skripsi (seperti flowchart atau use case). Kami yang tangani seluruh pembuatan kode dan teknisnya sampai websitenya hidup dan siap kamu demokan."
+    question: "Saya sama sekali nggak bisa koding, apakah tetap bisa?",
+    answer: "Sangat bisa. Cukup kirimkan Bab 3 atau flowchart sistem. Kami yang selesaikan seluruh aspek koding dan online-nya sampai siap kamu presentasikan."
   },
   {
-    question: "Project saya sudah ada kodenya tapi error / setengah jalan, bisa dilanjutkan?",
-    answer: "Bisa banget. Kirimkan source code atau folder project yang sudah ada. Kami akan cek bagian mana yang error atau belum selesai, lalu kami bantu perbaiki dan rapikan sampai siap dipresentasikan."
+    question: "Kodingan lama saya error atau setengah jadi, bisa dibereskan?",
+    answer: "Bisa. Kirim file project lama, kami audit bagian error-nya dan lanjutkan sampai berfungsi optimal."
   },
   {
-    question: "Bahan materi saya baru sebatas dokumen skripsi / Figma / screenshot, bisa?",
-    answer: "Bisa. Kami terbiasa menerjemahkan dokumen perancangan bab 3 skripsi, diagram alur, wireframe, atau coretan konsep menjadi website interaktif yang fungsional."
+    question: "Materi saya baru sebatas naskah Word / Figma / coretan, bisa?",
+    answer: "Bisa. Kami langsung terjemahkan rancangan Bab 3 atau wireframe kamu menjadi website demo yang hidup."
   },
   {
     question: "Berapa lama proses pengerjaannya?",
-    answer: "Rata-rata pengerjaan berkisar antara 3 hingga 7 hari kerja tergantung kompleksitas fitur. Jika jadwal sidang kamu sudah sangat dekat, tanyakan ketersediaan slot pengerjaan cepat (express) lewat WhatsApp."
+    answer: "Rata-rata 2–5 hari kerja. Tersedia juga slot pengerjaan kilat 1–2 hari jika jadwal sidang sudah mepet."
   },
   {
-    question: "Apakah bisa menggunakan domain sendiri?",
-    answer: "Bisa. Secara default kami sediakan subdomain gratis yang langsung aktif dan stabil. Jika kamu ingin memakai domain khusus (misal: namaproject.com atau .id), kami bantu setup tanpa biaya tambahan."
+    question: "Apakah dapat source code-nya?",
+    answer: "Pasti. Semua file source code diserahkan 100% lengkap dan rapi untuk lampiran naskah skripsi."
   }
 ];
+

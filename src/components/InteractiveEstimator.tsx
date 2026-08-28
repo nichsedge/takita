@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { CONTACT_CONFIG, getWhatsAppUrl } from '../config';
-import { MessageSquare, Send, Sparkles, SlidersHorizontal, Check } from 'lucide-react';
+import { MessageSquare, Send, Check } from 'lucide-react';
 
 export const InteractiveEstimator: React.FC = () => {
   const [category, setCategory] = useState<string>("Sistem Rekomendasi / SPK");
@@ -33,7 +34,13 @@ export const InteractiveEstimator: React.FC = () => {
     <section className="py-10 sm:py-16 bg-white border-b border-stone-200" id="hitung-kebutuhan">
       <div className="max-w-4xl mx-auto px-3.5 sm:px-6">
         
-        <div className="bg-stone-900 text-white rounded-2xl p-4 sm:p-8 shadow-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-stone-900 text-white rounded-2xl p-4 sm:p-7 shadow-lg"
+        >
           <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-400">
@@ -60,7 +67,7 @@ export const InteractiveEstimator: React.FC = () => {
                     key={cat}
                     type="button"
                     onClick={() => setCategory(cat)}
-                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all flex items-center justify-between active:scale-[0.98] ${
+                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] ${
                       category === cat
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
                         : 'bg-stone-800/80 border-stone-700/80 text-stone-300 hover:bg-stone-800'
@@ -84,7 +91,7 @@ export const InteractiveEstimator: React.FC = () => {
                     key={mat}
                     type="button"
                     onClick={() => setMaterialState(mat)}
-                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all flex items-center justify-between active:scale-[0.98] ${
+                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] ${
                       materialState === mat
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
                         : 'bg-stone-800/80 border-stone-700/80 text-stone-300 hover:bg-stone-800'
@@ -108,7 +115,7 @@ export const InteractiveEstimator: React.FC = () => {
                     key={dl}
                     type="button"
                     onClick={() => setDeadline(dl)}
-                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all flex items-center justify-between active:scale-[0.98] ${
+                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] ${
                       deadline === dl
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
                         : 'bg-stone-800/80 border-stone-700/80 text-stone-300 hover:bg-stone-800'
@@ -132,7 +139,7 @@ export const InteractiveEstimator: React.FC = () => {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-stone-950 font-black text-xs sm:text-sm py-3.5 px-6 rounded-xl transition-all shadow-md active:scale-[0.98]"
+                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-stone-950 font-black text-xs sm:text-sm py-3.5 px-6 rounded-xl transition-all duration-200 shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
               >
                 <Send className="w-4 h-4" />
                 <span>Kirim Format Ini ke WhatsApp Sekarang</span>
@@ -140,9 +147,10 @@ export const InteractiveEstimator: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
   );
 };
+

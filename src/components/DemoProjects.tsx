@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { DEMO_PROJECTS, DemoProject, getWhatsAppUrl, CONTACT_CONFIG } from '../config';
 import { MessageSquare, ExternalLink, Check, Sparkles, Filter, TrendingUp, Shield, BarChart3, MapPin, Star, FileText, CheckCircle2 } from 'lucide-react';
 
@@ -6,92 +7,108 @@ export const DemoProjects: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>(DEMO_PROJECTS[0].id);
 
   return (
-    <section className="py-14 sm:py-20 bg-stone-100/70 border-b border-stone-200" id="contoh-demo">
+    <section className="py-10 sm:py-16 bg-stone-100/70 border-b border-stone-200" id="contoh-demo">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-semibold mb-3">
-            <span>Contoh Model Demo</span>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl mx-auto text-center mb-6 sm:mb-8"
+        >
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-200/80 text-stone-700 text-xs font-semibold mb-2">
+            <span>Contoh Demo Asli</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-            "Project TA Gue Bisa Dibuat Seperti Apa?"
+          <h2 className="text-xl sm:text-3xl font-black text-stone-900 tracking-tight">
+            Contoh Website Demo Siap Sidang
           </h2>
-          <p className="text-sm sm:text-base text-stone-600 mt-3 max-w-2xl mx-auto">
-            Berikut adalah 3 contoh model website demo yang umum dibuat untuk kebutuhan sidang tugas akhir. 
-            Semua alur, formula metode, dan tampilan bisa disesuaikan dengan naskah skripsi kamu.
+          <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-xl mx-auto">
+            Semua alur, rumus metode, dan tampilan disinkronkan langsung dengan naskah skripsi kamu.
           </p>
-        </div>
+        </motion.div>
 
         {/* Project Selector Tabs */}
-        <div className="flex sm:flex-wrap items-center sm:justify-center gap-2 mb-6 sm:mb-10 overflow-x-auto pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35, delay: 0.05 }}
+          className="flex sm:flex-wrap items-center sm:justify-center gap-2 mb-6 sm:mb-8 overflow-x-auto pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
+        >
           {DEMO_PROJECTS.map((proj) => (
             <button
               key={proj.id}
               onClick={() => setActiveTab(proj.id)}
-              className={`text-xs sm:text-sm font-bold px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl transition-all whitespace-nowrap shrink-0 ${
+              className={`text-xs sm:text-sm font-bold px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl transition-all duration-150 whitespace-nowrap shrink-0 cursor-pointer ${
                 activeTab === proj.id
                   ? 'bg-stone-900 text-white shadow-sm'
-                  : 'bg-white text-stone-600 hover:bg-stone-200/80 border border-stone-200'
+                  : 'bg-white text-stone-600 hover:bg-stone-200/80 border border-stone-200 hover:-translate-y-0.5'
               }`}
             >
               {proj.title}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Active Demo Project Showcase Card */}
-        {DEMO_PROJECTS.map((project) => {
-          if (project.id !== activeTab) return null;
+        <AnimatePresence mode="wait">
+          {DEMO_PROJECTS.map((project) => {
+            if (project.id !== activeTab) return null;
 
-          return (
-            <div
-              key={project.id}
-              className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden transition-all"
-            >
-              {/* Project Top Bar */}
-              <div className="p-4 sm:p-7 border-b border-stone-100 bg-gradient-to-r from-stone-50 via-white to-stone-50 flex flex-col md:flex-row md:items-center md:justify-between gap-3.5 sm:gap-4">
-                <div>
-                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
-                      {project.badge}
-                    </span>
-                    <span className="text-[10px] sm:text-xs font-medium text-stone-500 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
-                      {project.category}
-                    </span>
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden"
+              >
+                {/* Project Top Bar */}
+                <div className="p-4 sm:p-7 border-b border-stone-100 bg-gradient-to-r from-stone-50 via-white to-stone-50 flex flex-col md:flex-row md:items-center md:justify-between gap-3.5 sm:gap-4">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
+                        {project.badge}
+                      </span>
+                      <span className="text-[10px] sm:text-xs font-medium text-stone-500 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 className="text-lg sm:text-2xl font-black text-stone-900 leading-snug">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm font-semibold text-emerald-700 mt-0.5">
+                      {project.methodology}
+                    </p>
                   </div>
-                  <h3 className="text-lg sm:text-2xl font-black text-stone-900 leading-snug">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm font-semibold text-emerald-700 mt-0.5">
-                    {project.methodology}
-                  </p>
-                </div>
 
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 sm:pt-0 border-t sm:border-t-0 border-stone-200">
-                  {project.liveUrl && (
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 sm:pt-0 border-t sm:border-t-0 border-stone-200">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-1.5 bg-stone-900 hover:bg-stone-800 active:bg-black text-white text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl transition-all duration-200 shadow-xs shrink-0 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+                      >
+                        <ExternalLink className="w-4 h-4 text-emerald-400" />
+                        <span>Buka Live Demo ↗</span>
+                      </a>
+                    )}
+
                     <a
-                      href={project.liveUrl}
+                      href={getWhatsAppUrl(CONTACT_CONFIG.messages.projectExample(project.title))}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 bg-stone-900 hover:bg-stone-800 active:bg-black text-white text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl transition-colors shadow-xs shrink-0 active:scale-[0.98]"
+                      className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl transition-all duration-200 shadow-xs shrink-0 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
                     >
-                      <ExternalLink className="w-4 h-4 text-emerald-400" />
-                      <span>Buka Live Demo ↗</span>
+                      <MessageSquare className="w-4 h-4 fill-white/20" />
+                      <span>Tanya Model Serupa</span>
                     </a>
-                  )}
-
-                  <a
-                    href={getWhatsAppUrl(CONTACT_CONFIG.messages.projectExample(project.title))}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl transition-colors shadow-xs shrink-0 active:scale-[0.98]"
-                  >
-                    <MessageSquare className="w-4 h-4 fill-white/20" />
-                    <span>Tanya Model Serupa</span>
-                  </a>
+                  </div>
                 </div>
-              </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                 {/* Left Column: Project Description & Features */}
@@ -459,22 +476,15 @@ export const DemoProjects: React.FC = () => {
                 </div>
               </div>
 
-            </div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
 
         {/* Footnote reassurance */}
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
           <p className="text-xs sm:text-sm text-stone-500">
-            Punya topik atau jurusan lain (Teknik Elektro, Manajemen, Akuntansi, Farmasi, dll)?{' '}
-            <a
-              href={getWhatsAppUrl("Halo kak, saya punya topik TA yang berbeda. Mau tanya apakah bisa dibantu dibuatkan website demonya?")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-700 font-bold hover:underline"
-            >
-              Konsultasikan judul TA kamu lewat WhatsApp →
-            </a>
+            Mendukung berbagai topik tugas akhir untuk seluruh jurusan (Informatika, SI, Elektro, Manajemen, Akuntansi, dll).
           </p>
         </div>
 

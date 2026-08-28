@@ -7,7 +7,6 @@ import { DemoProjects } from './components/DemoProjects';
 import { HowItWorks } from './components/HowItWorks';
 import { Pricing } from './components/Pricing';
 import { InteractiveEstimator } from './components/InteractiveEstimator';
-import { UrgencySection } from './components/UrgencySection';
 import { FaqSection } from './components/FaqSection';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
@@ -23,26 +22,23 @@ export default function App() {
         {/* 2. Hero Section */}
         <Hero />
 
-        {/* 3. Chat Preview / No-Fear WhatsApp Simulation Section */}
-        <ChatPreviewSection />
-
-        {/* 4. Social Proof / "What You Get" Trust Section */}
+        {/* 3. Social Proof / "What You Get" Trust Section */}
         <TrustSection />
 
-        {/* 4. Example Demo Projects (3 Realistic TA Demos) */}
+        {/* 4. Chat Preview / No-Fear WhatsApp Simulation Section */}
+        <ChatPreviewSection />
+
+        {/* 5. Example Demo Projects (3 Realistic TA Demos) */}
         <DemoProjects />
 
-        {/* 5. How It Works (Simple 5-Step Process) */}
+        {/* 6. How It Works (Simple 5-Step Process) */}
         <HowItWorks />
 
-        {/* 6. Simple Transparent Pricing */}
+        {/* 7. Simple Transparent Pricing */}
         <Pricing />
 
-        {/* 7. Interactive Message Generator / Estimator */}
+        {/* 8. Interactive Message Generator / Estimator */}
         <InteractiveEstimator />
-
-        {/* 8. Urgency Section (Sidang Sudah Dekat?) */}
-        <UrgencySection />
 
         {/* 9. Frequently Asked Questions */}
         <FaqSection />
