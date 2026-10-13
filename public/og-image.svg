@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="50%" stop-color="#065f46" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Background Geometric Glow Orbs -->
+  <circle cx="150" cy="120" r="260" fill="#10b981" opacity="0.15" filter="blur(80px)" />
+  <circle cx="1080" cy="520" r="300" fill="#059669" opacity="0.2" filter="blur(90px)" />
+  <circle cx="950" cy="160" r="180" fill="#34d399" opacity="0.1" filter="blur(60px)" />
+
+  <!-- Grid overlay subtle -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="560" y1="0" x2="560" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" />
+    <line x1="880" y1="0" x2="880" y2="630" />
+    <line x1="1040" y1="0" x2="1040" y2="630" />
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="220" x2="1200" y2="220" />
+    <line x1="0" y1="340" x2="1200" y2="340" />
+    <line x1="0" y1="460" x2="1200" y2="460" />
+    <line x1="0" y1="580" x2="1200" y2="580" />
+  </g>
+
+  <!-- Brand Badge Top Left -->
+  <g transform="translate(100, 80)">
+    <!-- Squircle Logo Icon -->
+    <rect width="64" height="64" rx="16" fill="url(#accentGrad)" filter="url(#shadow)" />
+    <!-- T Letter in Logo -->
+    <path d="M16 22H48V28H35V46H29V28H16V22Z" fill="#022c22" font-weight="bold" />
+    <!-- Brand Title -->
+    <text x="82" y="36" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="28" letter-spacing="-0.5">Takita</text>
+    <text x="82" y="55" fill="#a7f3d0" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="14" letter-spacing="1">TUGAS AKHIR KITA</text>
+  </g>
+
+  <!-- Tag Pill -->
+  <g transform="translate(100, 185)">
+    <rect width="320" height="36" rx="18" fill="#ffffff" fill-opacity="0.12" stroke="#34d399" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="20" cy="18" r="5" fill="#34d399" />
+    <text x="35" y="23" fill="#ecfdf5" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="13" letter-spacing="0.5">JASA WEBSITE DEMO SIAP SIDANG</text>
+  </g>
+
+  <!-- Main Headline -->
+  <g transform="translate(100, 280)">
+    <text x="0" y="0" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="52" letter-spacing="-1.5">Website TA Kamu,</text>
+    <text x="0" y="65" fill="#6ee7b7" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="52" letter-spacing="-1.5">Siap Buat Sidang.</text>
+    <text x="0" y="125" fill="#d1fae5" font-family="system-ui, -apple-system, sans-serif" font-weight="500" font-size="22" opacity="0.9">
+      Online • Sinkron Bab 3 &amp; 4 • Gratis Konsultasi &amp; Estimasi Awal
+    </text>
+  </g>
+
+  <!-- 3 Highlights Bottom Left -->
+  <g transform="translate(100, 485)">
+    <!-- Pill 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="46" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15" />
+      <circle cx="24" cy="23" r="8" fill="#10b981" />
+      <path d="M21 23L23 25L27 21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="42" y="29" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14">Deploy Link Aktif</text>
+    </g>
+
+    <!-- Pill 2 -->
+    <g transform="translate(225, 0)">
+      <rect width="220" height="46" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15" />
+      <circle cx="24" cy="23" r="8" fill="#10b981" />
+      <path d="M21 23L23 25L27 21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="42" y="29" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14">Full Source Code</text>
+    </g>
+
+    <!-- Pill 3 -->
+    <g transform="translate(460, 0)">
+      <rect width="220" height="46" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15" />
+      <circle cx="24" cy="23" r="8" fill="#10b981" />
+      <path d="M21 23L23 25L27 21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="42" y="29" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14">Bisa Slot Kilat 1-2 Hr</text>
+    </g>
+  </g>
+
+  <!-- Right Side Mockup Visual -->
+  <g transform="translate(760, 100)" filter="url(#shadow)">
+    <!-- Window Frame -->
+    <rect width="360" height="420" rx="18" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Window Header -->
+    <rect width="360" height="42" rx="18" fill="#1e293b" />
+    <circle cx="22" cy="21" r="5" fill="#ef4444" />
+    <circle cx="38" cy="21" r="5" fill="#f59e0b" />
+    <circle cx="54" cy="21" r="5" fill="#10b981" />
+    <rect x="75" y="11" width="210" height="20" rx="6" fill="#0f172a" />
+    <text x="180" y="25" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="middle">demo-sidang-ta.online</text>
+
+    <!-- Window Body Simulation -->
+    <!-- Nav bar -->
+    <rect x="18" y="58" width="324" height="26" rx="6" fill="#1e293b" />
+    <rect x="28" y="66" width="60" height="10" rx="3" fill="#34d399" />
+    <rect x="250" y="66" width="36" height="10" rx="3" fill="#475569" />
+    <rect x="294" y="66" width="36" height="10" rx="3" fill="#475569" />
+
+    <!-- Stat cards -->
+    <rect x="18" y="96" width="100" height="54" rx="8" fill="#1e293b" />
+    <text x="28" y="116" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">Total Data</text>
+    <text x="28" y="136" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="14">1,420</text>
+
+    <rect x="130" y="96" width="100" height="54" rx="8" fill="#1e293b" />
+    <text x="140" y="116" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">Akurasi Uji</text>
+    <text x="140" y="136" fill="#34d399" font-family="system-ui, sans-serif" font-weight="bold" font-size="14">94.8%</text>
+
+    <rect x="242" y="96" width="100" height="54" rx="8" fill="#1e293b" />
+    <text x="252" y="116" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">Status Demo</text>
+    <text x="252" y="136" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">Siap Uji</text>
+
+    <!-- Main Chart / Table representation -->
+    <rect x="18" y="162" width="324" height="135" rx="10" fill="#1e293b" />
+    <rect x="28" y="174" width="120" height="12" rx="3" fill="#64748b" />
+    
+    <!-- Bar chart simulation -->
+    <rect x="35" y="240" width="22" height="42" rx="4" fill="#3b82f6" />
+    <rect x="75" y="220" width="22" height="62" rx="4" fill="#10b981" />
+    <rect x="115" y="205" width="22" height="77" rx="4" fill="#34d399" />
+    <rect x="155" y="230" width="22" height="52" rx="4" fill="#f59e0b" />
+    <rect x="195" y="210" width="22" height="72" rx="4" fill="#8b5cf6" />
+    <rect x="235" y="195" width="22" height="87" rx="4" fill="#06b6d4" />
+    <rect x="275" y="215" width="22" height="67" rx="4" fill="#ec4899" />
+
+    <!-- Action button in frame -->
+    <rect x="18" y="312" width="324" height="42" rx="10" fill="url(#accentGrad)" />
+    <text x="180" y="338" fill="#022c22" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" text-anchor="middle">
+      Kalkulasi Uji Sidang Berhasil &#10003;
+    </text>
+
+    <!-- Badge ready -->
+    <rect x="18" y="366" width="324" height="34" rx="8" fill="#ffffff" fill-opacity="0.06" />
+    <text x="180" y="388" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">
+      Sesuai Metodologi Bab 3 &amp; 4
+    </text>
+  </g>
+</svg>

@@ -35,11 +35,17 @@ export const DemoProjects: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35, delay: 0.05 }}
+          role="tablist"
+          aria-label="Daftar contoh demo project"
           className="flex sm:flex-wrap items-center sm:justify-center gap-2 mb-6 sm:mb-8 overflow-x-auto pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {DEMO_PROJECTS.map((proj) => (
             <button
               key={proj.id}
+              role="tab"
+              id={`tab-${proj.id}`}
+              aria-selected={activeTab === proj.id}
+              aria-controls={`panel-${proj.id}`}
               onClick={() => setActiveTab(proj.id)}
               className={`text-xs sm:text-sm font-bold px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl transition-all duration-150 whitespace-nowrap shrink-0 cursor-pointer ${
                 activeTab === proj.id
@@ -60,6 +66,9 @@ export const DemoProjects: React.FC = () => {
             return (
               <motion.div
                 key={project.id}
+                id={`panel-${project.id}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${project.id}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -141,48 +150,80 @@ export const DemoProjects: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Right Column: Live Link & Deployment Info Card */}
-                  <div className="lg:col-span-5 p-5 sm:p-7 bg-stone-50/60 flex flex-col justify-between">
+                  {/* Right Column: Interactive Browser Frame & Specs */}
+                  <div className="lg:col-span-5 p-5 sm:p-7 bg-stone-50/70 flex flex-col justify-between gap-5">
                     <div>
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-stone-400 mb-3">
-                        Spesifikasi & Akses Live
-                      </h4>
+                      {/* Browser Frame Mockup */}
+                      <div className="rounded-xl border border-stone-300/80 bg-white shadow-sm overflow-hidden mb-5">
+                        {/* Chrome window header */}
+                        <div className="bg-stone-900 px-3 py-2 flex items-center justify-between gap-2 border-b border-stone-800">
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                          </div>
+                          <div className="flex-1 bg-stone-800 px-2.5 py-1 rounded-md text-[10px] font-mono text-emerald-400 truncate text-center flex items-center justify-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                            <span className="truncate">{project.liveUrl || 'demo-sidang.live'}</span>
+                          </div>
+                          <div className="text-[10px] text-stone-400 font-mono shrink-0 hidden sm:inline">
+                            HTTPS
+                          </div>
+                        </div>
 
-                      {/* Stats Grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-2.5 mb-5">
+                        {/* Browser simulated content preview */}
+                        <div className="p-4 bg-gradient-to-b from-stone-50 to-white text-stone-800">
+                          <div className="flex items-center justify-between pb-2.5 border-b border-stone-200 mb-3">
+                            <span className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
+                              <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                              {project.title.split('(')[0].trim()}
+                            </span>
+                            <span className="text-[10px] font-semibold text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded-full">
+                              Status: Siap Sidang
+                            </span>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-2 mb-3">
+                            <div className="bg-stone-100/80 p-2.5 rounded-lg border border-stone-200/80">
+                              <span className="block text-[10px] text-stone-500 font-medium">Uji Coba Dosen</span>
+                              <span className="text-xs font-bold text-stone-900">Responsif HP/PC</span>
+                            </div>
+                            <div className="bg-stone-100/80 p-2.5 rounded-lg border border-stone-200/80">
+                              <span className="block text-[10px] text-stone-500 font-medium">Kalkulasi Sistem</span>
+                              <span className="text-xs font-bold text-emerald-700">Real-Time</span>
+                            </div>
+                          </div>
+
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full inline-flex items-center justify-center gap-1.5 bg-stone-900 hover:bg-stone-800 active:bg-black text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-all duration-150 shadow-2xs hover:-translate-y-0.5"
+                            >
+                              <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                              <span>Buka Live Demo di Tab Baru ↗</span>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Stats Specs List */}
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-stone-400 mb-2.5">
+                        Spesifikasi Teknis
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-2 mb-3">
                         {project.stats.map((st, stIdx) => (
-                          <div key={stIdx} className="bg-white p-3 rounded-xl border border-stone-200 shadow-2xs flex items-center justify-between">
+                          <div key={stIdx} className="bg-white p-2.5 rounded-xl border border-stone-200 shadow-2xs flex items-center justify-between">
                             <span className="text-xs text-stone-500 font-medium">{st.label}</span>
                             <span className="text-xs font-bold text-stone-900">{st.value}</span>
                           </div>
                         ))}
                       </div>
-
-                      {/* Direct Live Access Card */}
-                      {project.liveUrl && (
-                        <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-2xs mb-4">
-                          <div className="flex items-center gap-2 text-xs font-bold text-stone-900 mb-1.5">
-                            <Globe className="w-4 h-4 text-emerald-600" />
-                            <span>Akses Langsung ke Website</span>
-                          </div>
-                          <p className="text-xs text-stone-500 mb-3">
-                            Buka tautan di bawah ini untuk melihat dan menguji fungsionalitas websitenya.
-                          </p>
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-stone-800 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-lg transition-all duration-200"
-                          >
-                            <ExternalLink className="w-4 h-4 text-emerald-400" />
-                            <span className="truncate">{project.liveUrl}</span>
-                          </a>
-                        </div>
-                      )}
                     </div>
 
-                    <div className="text-[11px] text-stone-400 text-center sm:text-left">
-                      💡 Ingin membuat website dengan studi kasus atau fitur serupa? Hubungi kami via WhatsApp untuk diskusi gratis.
+                    <div className="text-[11px] text-stone-500 bg-white/80 border border-stone-200/80 rounded-xl p-3 text-center sm:text-left leading-relaxed">
+                      💡 <strong>Butuh penyesuaian khusus?</strong> Alur kalkulasi, input data penguji, dan desain UI bisa dikustomisasi 100% mengikuti bimbingan dosen.
                     </div>
                   </div>
                 </div>
