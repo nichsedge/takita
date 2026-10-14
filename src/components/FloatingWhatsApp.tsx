@@ -31,14 +31,14 @@ export const FloatingWhatsApp: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 80, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-stone-900/98 backdrop-blur-md border-t border-stone-800 pt-2.5 pb-[max(0.65rem,env(safe-area-inset-bottom))] px-3.5 flex items-center justify-between gap-2.5 shadow-2xl"
+            className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-stone-900/98 backdrop-blur-md border-t border-stone-800 pt-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] px-4 flex items-center justify-between gap-3 shadow-2xl"
           >
             <div className="flex flex-col min-w-0">
               <span className="text-xs font-black text-white leading-tight flex items-center gap-1.5 truncate">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
                 <span>Konsultasi Demo TA</span>
               </span>
-              <span className="text-[10px] text-stone-400 truncate">Gratis • Respon cepat &lt; 15 mnt</span>
+              <span className="text-[11px] text-stone-300 truncate">Gratis • Respon cepat &lt; 15 mnt</span>
             </div>
 
             <a
@@ -46,7 +46,7 @@ export const FloatingWhatsApp: React.FC = () => {
               href={getWhatsAppUrl(CONTACT_CONFIG.messages.hero)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 bg-emerald-600 active:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md shrink-0 active:scale-[0.97]"
+              className="min-h-[44px] flex items-center justify-center gap-1.5 bg-emerald-600 active:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md shrink-0 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900"
             >
               <MessageSquare className="w-4 h-4 fill-white/20" />
               <span>Chat WhatsApp</span>
@@ -69,19 +69,19 @@ export const FloatingWhatsApp: React.FC = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 6, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center gap-2 bg-white text-stone-900 text-xs font-semibold px-3.5 py-2.5 rounded-xl shadow-xl border border-stone-200"
+                  className="flex items-center gap-2 bg-white text-stone-900 text-xs font-semibold pl-3.5 pr-2 py-2 rounded-xl shadow-xl border border-stone-200"
                 >
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <div>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                  <div className="mr-1">
                     <div>Mau tanya untuk tugas akhir kamu?</div>
-                    <div className="text-[10px] text-stone-500 font-normal">Kirim judul / Bab 3, kami cek gratis.</div>
+                    <div className="text-[11px] text-stone-600 font-normal">Kirim judul / Bab 3, kami cek gratis.</div>
                   </div>
                   <button
                     onClick={() => setShowTooltip(false)}
-                    className="text-stone-400 hover:text-stone-600 ml-1 p-0.5 rounded cursor-pointer"
-                    aria-label="Tutup pesan"
+                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-stone-400 hover:text-stone-700 rounded-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
+                    aria-label="Tutup notifikasi bantuan"
                   >
-                    <X className="w-3.5 h-3.5" />
+                    <X className="w-4 h-4" />
                   </button>
                 </motion.div>
               )}
@@ -93,8 +93,8 @@ export const FloatingWhatsApp: React.FC = () => {
               href={getWhatsAppUrl(CONTACT_CONFIG.messages.hero)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-4 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
-              aria-label="Chat WhatsApp Takita"
+              className="group flex items-center min-h-[48px] gap-2.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-5 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              aria-label="Chat WhatsApp Takita untuk konsultasi gratis"
             >
               <div className="relative">
                 <MessageSquare className="w-5 h-5 fill-white/20" />
@@ -108,4 +108,3 @@ export const FloatingWhatsApp: React.FC = () => {
     </AnimatePresence>
   );
 };
-

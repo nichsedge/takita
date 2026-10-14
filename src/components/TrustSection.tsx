@@ -37,11 +37,11 @@ export const TrustSection: React.FC = () => {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-xl mx-auto text-center mb-8 sm:mb-10"
         >
-          <h2 className="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1.5">
-            Fokus & Transparan
-          </h2>
-          <p className="text-xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
+          <h2 className="text-xl sm:text-3xl font-black text-stone-900 tracking-tight">
             Output yang Kamu Terima
+          </h2>
+          <p className="text-xs sm:text-sm text-stone-600 mt-1.5">
+            Setiap pengerjaan difokuskan agar project kamu siap dipresentasikan tanpa kendala teknis.
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export const TrustSection: React.FC = () => {
                 className="bg-stone-50/80 border border-stone-200/90 rounded-xl p-4 sm:p-5 transition-all duration-200 hover:border-stone-300 hover:bg-stone-50 hover:-translate-y-0.5"
               >
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-100/80 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5">
                     <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
@@ -94,5 +94,3 @@ export const TrustSection: React.FC = () => {
     </section>
   );
 };
-
-

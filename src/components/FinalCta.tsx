@@ -41,7 +41,7 @@ export const FinalCta: React.FC = () => {
               href={getWhatsAppUrl(CONTACT_CONFIG.messages.hero)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-stone-950 font-black text-sm sm:text-lg px-8 py-4 rounded-xl shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+              className="w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-stone-950 font-black text-sm sm:text-lg px-8 py-4 rounded-xl shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900"
             >
               <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 fill-stone-950/20" />
               <span>Chat WhatsApp Sekarang</span>
@@ -49,17 +49,17 @@ export const FinalCta: React.FC = () => {
           </div>
 
           {/* Microcopy */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-sm text-stone-400">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-stone-300">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
               Konsultasi Gratis
             </span>
-            <span className="text-stone-600">•</span>
+            <span className="text-stone-500" aria-hidden="true">•</span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
               Respon {CONTACT_CONFIG.averageResponseTime}
             </span>
-            <span className="text-stone-600">•</span>
+            <span className="text-stone-500" aria-hidden="true">•</span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
               Tanpa DP di Awal
@@ -71,4 +71,3 @@ export const FinalCta: React.FC = () => {
     </section>
   );
 };
-

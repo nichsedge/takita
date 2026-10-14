@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CONTACT_CONFIG, getWhatsAppUrl } from '../config';
-import { MessageSquare, Send, Check } from 'lucide-react';
+import { Send, Check } from 'lucide-react';
 
 export const InteractiveEstimator: React.FC = () => {
   const [category, setCategory] = useState<string>("Sistem Informasi / Portal Web");
@@ -32,7 +32,7 @@ export const InteractiveEstimator: React.FC = () => {
 
   return (
     <section className="py-10 sm:py-16 bg-white border-b border-stone-200" id="format-pesan">
-      <div className="max-w-4xl mx-auto px-3.5 sm:px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -57,17 +57,19 @@ export const InteractiveEstimator: React.FC = () => {
 
           <div className="space-y-4 sm:space-y-5">
             {/* 1. Kategori Project */}
-            <div>
-              <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-400 mb-2">
+            <div role="radiogroup" aria-labelledby="label-category">
+              <span id="label-category" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">
                 1. Kategori / Model Demo TA:
-              </label>
+              </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     type="button"
+                    role="radio"
+                    aria-checked={category === cat}
                     onClick={() => setCategory(cat)}
-                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] ${
+                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 ${
                       category === cat
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
                         : 'bg-stone-800/80 border-stone-700/80 text-stone-300 hover:bg-stone-800'
@@ -81,17 +83,19 @@ export const InteractiveEstimator: React.FC = () => {
             </div>
 
             {/* 2. Kondisi Materi */}
-            <div>
-              <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-400 mb-2">
+            <div role="radiogroup" aria-labelledby="label-material">
+              <span id="label-material" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">
                 2. Materi yang Kamu Miliki Sekarang:
-              </label>
+              </span>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {materialStates.map((mat) => (
                   <button
                     key={mat}
                     type="button"
+                    role="radio"
+                    aria-checked={materialState === mat}
                     onClick={() => setMaterialState(mat)}
-                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] ${
+                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 ${
                       materialState === mat
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
                         : 'bg-stone-800/80 border-stone-700/80 text-stone-300 hover:bg-stone-800'
@@ -105,17 +109,19 @@ export const InteractiveEstimator: React.FC = () => {
             </div>
 
             {/* 3. Target Deadline */}
-            <div>
-              <label className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-400 mb-2">
+            <div role="radiogroup" aria-labelledby="label-deadline">
+              <span id="label-deadline" className="block text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">
                 3. Target Waktu Selesai / Jadwal Sidang:
-              </label>
+              </span>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {deadlines.map((dl) => (
                   <button
                     key={dl}
                     type="button"
+                    role="radio"
+                    aria-checked={deadline === dl}
                     onClick={() => setDeadline(dl)}
-                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] ${
+                    className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 ${
                       deadline === dl
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
                         : 'bg-stone-800/80 border-stone-700/80 text-stone-300 hover:bg-stone-800'
@@ -130,7 +136,7 @@ export const InteractiveEstimator: React.FC = () => {
 
             {/* Preview Box & Send Button */}
             <div className="pt-2 sm:pt-3 border-t border-stone-800">
-              <div className="bg-stone-950 p-3 sm:p-3.5 rounded-xl border border-stone-800 mb-3.5 sm:mb-4 font-mono text-[11px] sm:text-xs text-emerald-400/90 whitespace-pre-line leading-relaxed">
+              <div className="bg-stone-950 p-3 sm:p-3.5 rounded-xl border border-stone-800 mb-3.5 sm:mb-4 font-mono text-[11px] sm:text-xs text-emerald-300 whitespace-pre-line leading-relaxed">
                 {customWaMessage}
               </div>
 
@@ -139,7 +145,7 @@ export const InteractiveEstimator: React.FC = () => {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-stone-950 font-black text-xs sm:text-sm py-3.5 px-6 rounded-xl transition-all duration-200 shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+                className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-stone-950 font-black text-xs sm:text-sm py-3.5 px-6 rounded-xl transition-all duration-200 shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900"
               >
                 <Send className="w-4 h-4" />
                 <span>Kirim Format Ini ke WhatsApp Sekarang</span>
@@ -153,4 +159,3 @@ export const InteractiveEstimator: React.FC = () => {
     </section>
   );
 };
-

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MessageSquare, CheckCircle2, ArrowRight, Zap, Globe2, Sparkles, Code2 } from 'lucide-react';
+import { MessageSquare, CheckCircle2, ArrowRight, Zap, Globe2, Code2 } from 'lucide-react';
 import { CONTACT_CONFIG, getWhatsAppUrl } from '../config';
 
 export const Hero: React.FC = () => {
@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
             </span>
           </motion.h1>
 
-          {/* Supporting Copy - Short & punchy */}
+          {/* Supporting Copy */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
               href={getWhatsAppUrl(CONTACT_CONFIG.messages.hero)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm sm:text-base px-6 sm:px-7 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99]"
+              className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm sm:text-base px-6 sm:px-7 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
             >
               <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 fill-white/20" />
               <span>Konsultasi WhatsApp Sekarang</span>
@@ -66,10 +66,10 @@ export const Hero: React.FC = () => {
 
             <a
               href="#contoh-demo"
-              className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-1.5 bg-stone-100 hover:bg-stone-200 active:bg-stone-300 text-stone-800 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl border border-stone-200 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-1.5 bg-stone-100 hover:bg-stone-200 active:bg-stone-300 text-stone-800 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl border border-stone-200 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2"
             >
               <span>Lihat Contoh Demo</span>
-              <ArrowRight className="w-4 h-4 text-stone-500" />
+              <ArrowRight className="w-4 h-4 text-stone-600" />
             </a>
           </motion.div>
 
@@ -78,18 +78,18 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.28 }}
-            className="flex flex-wrap items-center justify-center gap-y-1 gap-x-3 text-[11px] sm:text-xs text-stone-500 font-medium"
+            className="flex flex-wrap items-center justify-center gap-y-1 gap-x-3 text-[11px] sm:text-xs font-medium"
           >
             <span className="inline-flex items-center gap-1 text-stone-700">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
               Konsultasi Gratis
             </span>
-            <span className="text-stone-300">•</span>
+            <span className="text-stone-400" aria-hidden="true">•</span>
             <span className="inline-flex items-center gap-1 text-stone-700">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
               Tanpa DP Awal
             </span>
-            <span className="hidden sm:inline text-stone-300">•</span>
+            <span className="hidden sm:inline text-stone-400" aria-hidden="true">•</span>
             <span className="inline-flex items-center gap-1 text-stone-700">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
               Dapat Link & Source Code
@@ -98,7 +98,7 @@ export const Hero: React.FC = () => {
 
         </div>
 
-        {/* Crisp 3-Pillar Highlight Grid (Replaces bulky text cards) */}
+        {/* 3-Pillar Highlight Grid */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
             </div>
             <div>
               <div className="font-bold text-xs sm:text-sm text-stone-900 leading-tight">Link Live Aktif</div>
-              <div className="text-[11px] text-stone-500 mt-0.5">Bisa dibuka dosen di HP/Laptop</div>
+              <div className="text-[11px] text-stone-600 mt-0.5">Bisa dibuka dosen di HP/Laptop</div>
             </div>
           </div>
 
@@ -121,7 +121,7 @@ export const Hero: React.FC = () => {
             </div>
             <div>
               <div className="font-bold text-xs sm:text-sm text-stone-900 leading-tight">Bisa Slot Kilat</div>
-              <div className="text-[11px] text-stone-500 mt-0.5">1–3 hari untuk deadline mepet</div>
+              <div className="text-[11px] text-stone-600 mt-0.5">1–3 hari untuk deadline mepet</div>
             </div>
           </div>
 
@@ -131,7 +131,7 @@ export const Hero: React.FC = () => {
             </div>
             <div>
               <div className="font-bold text-xs sm:text-sm text-stone-900 leading-tight">Sinkron Bab 3 & 4</div>
-              <div className="text-[11px] text-stone-500 mt-0.5">Alur & metode persis naskah</div>
+              <div className="text-[11px] text-stone-600 mt-0.5">Alur & metode persis naskah</div>
             </div>
           </div>
         </motion.div>
@@ -140,5 +140,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-
-

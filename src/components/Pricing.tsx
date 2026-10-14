@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { PRICING_INCLUSIONS, CONTACT_CONFIG, getWhatsAppUrl } from '../config';
-import { MessageSquare, Check, ShieldCheck, Sparkles, ArrowDown } from 'lucide-react';
+import { MessageSquare, Check, ShieldCheck, ArrowDown } from 'lucide-react';
 
 export const Pricing: React.FC = () => {
   return (
@@ -16,14 +16,10 @@ export const Pricing: React.FC = () => {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-xl mx-auto text-center mb-6 sm:mb-10"
         >
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/80 text-emerald-800 text-xs font-bold mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Estimasi Transparan</span>
-          </div>
           <h2 className="text-xl sm:text-3xl font-black text-stone-900 tracking-tight">
             Biaya Menyesuaikan Scope Project
           </h2>
-          <p className="text-xs sm:text-sm text-stone-600 mt-1">
+          <p className="text-xs sm:text-sm text-stone-600 mt-1.5">
             Kirim materi kamu. Kami hitungkan estimasi waktu & biaya secara <span className="font-bold text-stone-800">100% gratis</span>.
           </p>
         </motion.div>
@@ -39,9 +35,9 @@ export const Pricing: React.FC = () => {
           
           {/* What is Included List */}
           <div className="pb-5">
-            <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-400 mb-3">
+            <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-700 mb-3">
               Paket Pengerjaan Sudah Termasuk:
-            </h4>
+            </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {PRICING_INCLUSIONS.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-stone-800">
@@ -69,7 +65,7 @@ export const Pricing: React.FC = () => {
               href={getWhatsAppUrl(CONTACT_CONFIG.messages.pricing)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full min-h-[46px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-xl transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+              className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-xl transition-all duration-200 shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
             >
               <MessageSquare className="w-4 h-4 fill-white/20" />
               <span>Kirim Materi & Tanya Estimasi Biaya</span>
@@ -78,7 +74,7 @@ export const Pricing: React.FC = () => {
             <div className="text-center">
               <a
                 href="#format-pesan"
-                className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-stone-500 hover:text-stone-800 transition-colors font-medium"
+                className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2 rounded"
               >
                 <span>Atau gunakan format template pesan WhatsApp di bawah</span>
                 <ArrowDown className="w-3 h-3" />
@@ -92,6 +88,3 @@ export const Pricing: React.FC = () => {
     </section>
   );
 };
-
-
-

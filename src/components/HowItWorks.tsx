@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { HOW_IT_WORKS_STEPS, CONTACT_CONFIG, getWhatsAppUrl } from '../config';
+import { HOW_IT_WORKS_STEPS } from '../config';
 import { MessageSquare, UploadCloud, FileSearch, Globe, Award } from 'lucide-react';
 
 export const HowItWorks: React.FC = () => {
@@ -18,12 +18,12 @@ export const HowItWorks: React.FC = () => {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-xl mx-auto text-center mb-6 sm:mb-12"
         >
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1 block">
-            Alur Pengerjaan
-          </span>
           <h2 className="text-xl sm:text-3xl font-black text-stone-900 tracking-tight">
             5 Langkah Mudah Sampai Siap Sidang
           </h2>
+          <p className="text-xs sm:text-sm text-stone-600 mt-1.5">
+            Dari konsultasi materi sampai naskah dan website siap dipresentasikan ke dosen.
+          </p>
         </motion.div>
 
         {/* Steps Flow Grid */}
@@ -49,11 +49,11 @@ export const HowItWorks: React.FC = () => {
                       <h3 className="text-xs sm:text-sm font-bold text-stone-900 leading-snug">
                         {step.title}
                       </h3>
-                      <div className="text-stone-400 shrink-0">
+                      <div className="text-stone-500 shrink-0">
                         <Icon className="w-3.5 h-3.5" />
                       </div>
                     </div>
-                    <p className="text-[11px] text-stone-600 leading-relaxed">
+                    <p className="text-xs text-stone-600 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -106,4 +106,3 @@ export const HowItWorks: React.FC = () => {
     </section>
   );
 };
-
