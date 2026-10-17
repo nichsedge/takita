@@ -30,7 +30,7 @@
   /* Browser surfaces: Themed scrollbars */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 transparent;
+    scrollbar-color: #d6d3d1 transparent;
   }
 
   *::-webkit-scrollbar {
@@ -43,12 +43,12 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
+    background-color: #d6d3d1;
     border-radius: 9999px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background-color: #94a3b8;
+    background-color: #a8a29e;
   }
 
   /* Accessible focus indicators */

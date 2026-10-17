@@ -30,6 +30,37 @@ export const InteractiveEstimator: React.FC = () => {
   const customWaMessage = CONTACT_CONFIG.messages.customEstimator(category, deadline, materialState);
   const waUrl = getWhatsAppUrl(customWaMessage);
 
+  const handleRadioKeyDown = (
+    e: React.KeyboardEvent,
+    options: string[],
+    currentValue: string,
+    setValue: (val: string) => void,
+    groupId: string
+  ) => {
+    const currentIndex = options.indexOf(currentValue);
+    let nextIndex = -1;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      nextIndex = (currentIndex + 1) % options.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      nextIndex = (currentIndex - 1 + options.length) % options.length;
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      nextIndex = 0;
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      nextIndex = options.length - 1;
+    }
+
+    if (nextIndex !== -1) {
+      const nextVal = options[nextIndex];
+      setValue(nextVal);
+      document.getElementById(`${groupId}-${nextIndex}`)?.focus();
+    }
+  };
+
   return (
     <section className="py-10 sm:py-16 bg-white border-b border-stone-200" id="format-pesan">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -62,13 +93,16 @@ export const InteractiveEstimator: React.FC = () => {
                 1. Kategori / Model Demo TA:
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {categories.map((cat) => (
+                {categories.map((cat, idx) => (
                   <button
                     key={cat}
+                    id={`cat-${idx}`}
                     type="button"
                     role="radio"
                     aria-checked={category === cat}
+                    tabIndex={category === cat ? 0 : -1}
                     onClick={() => setCategory(cat)}
+                    onKeyDown={(e) => handleRadioKeyDown(e, categories, category, setCategory, 'cat')}
                     className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 ${
                       category === cat
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
@@ -88,13 +122,16 @@ export const InteractiveEstimator: React.FC = () => {
                 2. Materi yang Kamu Miliki Sekarang:
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                {materialStates.map((mat) => (
+                {materialStates.map((mat, idx) => (
                   <button
                     key={mat}
+                    id={`mat-${idx}`}
                     type="button"
                     role="radio"
                     aria-checked={materialState === mat}
+                    tabIndex={materialState === mat ? 0 : -1}
                     onClick={() => setMaterialState(mat)}
+                    onKeyDown={(e) => handleRadioKeyDown(e, materialStates, materialState, setMaterialState, 'mat')}
                     className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 ${
                       materialState === mat
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'
@@ -114,13 +151,16 @@ export const InteractiveEstimator: React.FC = () => {
                 3. Target Waktu Selesai / Jadwal Sidang:
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                {deadlines.map((dl) => (
+                {deadlines.map((dl, idx) => (
                   <button
                     key={dl}
+                    id={`dl-${idx}`}
                     type="button"
                     role="radio"
                     aria-checked={deadline === dl}
+                    tabIndex={deadline === dl ? 0 : -1}
                     onClick={() => setDeadline(dl)}
+                    onKeyDown={(e) => handleRadioKeyDown(e, deadlines, deadline, setDeadline, 'dl')}
                     className={`min-h-[44px] text-left text-xs p-3 rounded-xl border transition-all duration-150 flex items-center justify-between cursor-pointer active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 ${
                       deadline === dl
                         ? 'bg-emerald-950/90 border-emerald-500 text-emerald-300 font-bold'

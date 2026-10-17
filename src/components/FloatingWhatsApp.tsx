@@ -8,17 +8,22 @@ export const FloatingWhatsApp: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show sticky CTA once user scrolls past the Hero section (~450px)
-      if (window.scrollY > 450) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    const heroEl = document.getElementById('hero-section');
+    if (!heroEl) {
+      setIsVisible(true);
+      return;
+    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show sticky WhatsApp once user scrolls past hero section
+        setIsVisible(!entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(heroEl);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -78,7 +83,7 @@ export const FloatingWhatsApp: React.FC = () => {
                   </div>
                   <button
                     onClick={() => setShowTooltip(false)}
-                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-stone-400 hover:text-stone-700 rounded-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
+                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-stone-600 hover:text-stone-900 active:text-stone-950 rounded-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
                     aria-label="Tutup notifikasi bantuan"
                   >
                     <X className="w-4 h-4" />

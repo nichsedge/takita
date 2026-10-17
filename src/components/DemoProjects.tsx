@@ -65,7 +65,7 @@ export const DemoProjects: React.FC = () => {
               role="tab"
               id={`tab-${proj.id}`}
               aria-selected={activeTab === proj.id}
-              aria-controls={`panel-${proj.id}`}
+              aria-controls={activeTab === proj.id ? `panel-${proj.id}` : undefined}
               tabIndex={activeTab === proj.id ? 0 : -1}
               onClick={() => setActiveTab(proj.id)}
               onKeyDown={(e) => handleKeyDown(e, idx)}

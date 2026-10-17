@@ -62,7 +62,7 @@ export const ChatPreviewSection: React.FC = () => {
                   <p className="leading-snug">
                     Halo kak, mau buat demo website skripsi tentang <b>Sistem Rekomendasi</b> tapi belum paham kodingnya. Bisa dibantu?
                   </p>
-                  <div className="text-[10px] text-stone-500 text-right mt-1 flex items-center justify-end gap-1">
+                  <div className="text-[10px] text-emerald-900/80 font-medium text-right mt-1 flex items-center justify-end gap-1">
                     <span>14:02</span>
                     <CheckCheck className="w-3.5 h-3.5 text-blue-600 inline" aria-label="Terkirim dan dibaca" />
                   </div>
@@ -75,7 +75,7 @@ export const ChatPreviewSection: React.FC = () => {
                   <p className="leading-snug">
                     Halo kak! Bisa banget 😊 Boleh kirim file <b>Bab 3 / rumus metodenya</b> ya. Kami cek dulu secara <b>GRATIS</b>.
                   </p>
-                  <div className="text-[10px] text-stone-500 text-right mt-1">
+                  <div className="text-[10px] text-stone-600 font-medium text-right mt-1">
                     <span>14:04</span>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export const ChatPreviewSection: React.FC = () => {
                   </div>
                   <div className="min-w-0">
                     <div className="font-bold text-[11px] sm:text-xs truncate">Bab3_Metodologi.pdf</div>
-                    <div className="text-[10px] text-stone-600">Ini filenya kak!</div>
+                    <div className="text-[10px] text-emerald-900/80 font-medium">Ini filenya kak!</div>
                   </div>
                 </div>
               </div>

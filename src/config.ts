@@ -50,7 +50,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
     methodology: "Peta Interaktif, Direktori Wisata & Content Management",
     description: "Website portal interaktif untuk eksplorasi potensi pariwisata, budaya lokal, dan informasi desa/daerah dengan navigasi terstruktur dan tampilan modern.",
     badge: "Contoh Demo",
-    liveUrl: "http://sabasunten.id/",
+    liveUrl: "https://sabasunten.id/",
     features: [
       "Direktori destinasi wisata budaya dengan filter kategori",
       "Peta lokasi & panduan rute interaktif",
